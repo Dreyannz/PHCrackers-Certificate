@@ -63,3 +63,5 @@ echo '</ca>' >> /home/vps/public_html/client.ovpn
 cd /home/vps/public_html/
 tar -czf /home/vps/public_html/openvpn.tar.gz client.ovpn
 tar -czf /home/vps/public_html/client.tar.gz client.ovpn
+
+echo "Done, please reboot/restart your server."
