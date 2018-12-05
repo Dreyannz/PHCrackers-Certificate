@@ -17,15 +17,15 @@ cp easy-rsa/keys/ca.crt .
 cp easy-rsa/keys/ca.key .
 
 
-if [ -f /home/vps/public_html/client.ovpn ]; then
-    rm -f /home/vps/public_html/client.ovpn
+if [ -f /var/www/html/client.ovpn ]; then
+    rm -f /var/www/html/client.ovpn
 fi
-if [ -f /home/vps/public_html/openvpn.tar.gz ]; then
-    rm -f /home/vps/public_html/openvpn.tar.gz
+if [ -f /var/www/html/openvpn.tar.gz ]; then
+    rm -f /var/www/html/openvpn.tar.gz
 fi
 
 #Create New Client Config
-cat > /home/vps/public_html/client.ovpn <<-END
+cat > /var/www/html/ <<-END
 # Created by PHCrackersAdmin
 
 client
@@ -57,11 +57,11 @@ http-proxy-retry
 
 END
 
-echo '<ca>' >> /home/vps/public_html/client.ovpn
-cat /etc/openvpn/ca.crt >> /home/vps/public_html/client.ovpn
-echo '</ca>' >> /home/vps/public_html/client.ovpn
-cd /home/vps/public_html/
-tar -czf /home/vps/public_html/openvpn.tar.gz client.ovpn
-tar -czf /home/vps/public_html/client.tar.gz client.ovpn
+echo '<ca>' >> /var/www/html/client.ovpn
+cat /etc/openvpn/ca.crt >> /var/www/html/client.ovpn
+echo '</ca>' >> /var/www/html/client.ovpn
+cd /var/www/html/
+tar -czf /var/www/html/openvpn.tar.gz client.ovpn
+tar -czf /var/www/html/client.tar.gz client.ovpn
 
 echo "Done, please reboot/restart your server."
