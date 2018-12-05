@@ -25,7 +25,7 @@ if [ -f /var/www/html/openvpn.tar.gz ]; then
 fi
 
 #Create New Client Config
-cat > /var/www/html/ <<-END
+cat > /var/www/html/client.ovpn <<-END
 # Created by PHCrackersAdmin
 
 client
